@@ -11,7 +11,11 @@ public class Example2 {
         System.out.println("Vehicle name from the non-spring context is: " + vehicle.getName());
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        Vehicle veh = context.getBean("kiaVehicle",Vehicle.class);
+
+        Vehicle veh = context.getBean(Vehicle.class);
         System.out.println("Vehicle name from the spring context is: " + veh.getName());
+
+        Vehicle veh1 = context.getBean("audiVehicle",Vehicle.class);
+        System.out.println("Vehicle name from the spring context is: " + veh1.getName());
     }
 }
